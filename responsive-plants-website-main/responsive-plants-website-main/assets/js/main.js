@@ -97,6 +97,7 @@ function SendMail() {
             icon: "success"
           });
     })
+    
 }
 
 
