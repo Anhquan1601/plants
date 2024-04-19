@@ -118,13 +118,97 @@ btn.forEach(function(button,index){
 })
 function addcart(productPrice,productImg,productName) {
     var addtr = document.createElement("tr")
-    var trcontent = '<tr><td style="display: flex;align-items: center;"><img style="width: 70px" src="' +productImg+ '" alt="">' +productName+ '</td><td><p><span>' +productPrice+ '</span><sup>d</sup></p></td><td><input style="width: 30px; outline: none;" type="number" value="1" min="1"></td><td style="cursor: pointer;">Xoa</td></tr>'
+    var cartItem = document.querySelectorAll("tbody tr")
+    for (var i=0;i<cartItem.length;i++){
+        var productT = document.querySelectorAll(".title")
+        if(productT[i].innerHTML == productName){ 
+            Swal.fire("Sản phẩm đã có trong giỏ!");
+            return
+        }
+    }
+    var trcontent = '<tr><td style="display: flex;align-items: center;"><img style="width: 70px" src="' +productImg+ '" alt=""><span class="title">' +productName+ '</span></td><td><p><span class="price">' +productPrice+ '</span><sup>d</sup></p></td><td><input style="width: 30px; outline: none;" type="number" value="1" min="1"></td><td style="cursor: pointer;"><span class="cart-delete">Xoa</span></td></tr>'
     addtr.innerHTML = trcontent
     var cartTable = document.querySelector("tbody")
-     console.log(cartTable)
+     //console.log(cartTable)
      cartTable.append(addtr)
+
+     carttotal()
+     deletecart()
 }
 //------total price--------//
+function carttotal() {
+    var cartItem = document.querySelectorAll("tbody tr")
+    var totalC = 0
+    //console.log(cartItem);
+    for (var i=0;i<cartItem.length;i++){
+        var inputValue = cartItem[i].querySelector("input").value
+        //console.log(inputValue)
+        var productPrice = cartItem[i].querySelector(".price").innerHTML
+        //console.log(productPrice)
+        totalA = inputValue*productPrice*1000
+        //totalB = totalA.toLocaleString('de-DE')
+        //console.log(totalB);
+        totalC= totalC + totalA
+        //totalD = totalC.toLocaleString('de-DE')
+        //console.log(totalC)
+
+    }
+    var cartTotalA = document.querySelector(".price-total span")
+    var cartPrice =document.querySelector(".cart-icon span")
+    cartTotalA.innerHTML = totalC.toLocaleString('de-DE')
+    cartPrice.innerHTML = totalC.toLocaleString('de-DE')
+    //console.log(cartTotalA)
+    iputchange()
+}
+
+
+
+//------Delete card--------//
+function deletecart(){
+    var cartItem = document.querySelectorAll("tbody tr")
+    for (var i=0;i<cartItem.length;i++){
+        var productT = document.querySelectorAll(".cart-delete")
+        productT[i].addEventListener("click",function(event){
+            var cartDelete = event.target
+            var cartitemR= cartDelete.parentElement.parentElement
+            cartitemR.remove()
+
+            //console.log(cartitemR)
+            carttotal()
+        })
+        
+        }
+    }
+function iputchange(){
+    var cartItem = document.querySelectorAll("tbody tr")
+    for (var i=0;i<cartItem.length;i++){
+        var inputValue = cartItem[i].querySelector("input")
+      inputValue.addEventListener("change",function(event){
+        carttotal()
+      })
+    }
+}
+
+
+const cartshow = document.querySelector(".cart-button")
+cartshow.addEventListener("click",function(){
+
+    document.querySelector(".cart").style.right= "0"
+})
+
+const cartbtn = document.querySelector(".fa-times")
+cartbtn.addEventListener("click",function(){
+
+    document.querySelector(".cart").style.right= "-100%"
+
+})
+
+
+
+
+
+
+
 
 
 

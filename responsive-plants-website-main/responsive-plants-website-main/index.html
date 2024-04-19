@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+       
         <!--=============== FAVICON ===============-->
         <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
 
@@ -51,7 +51,13 @@
                             <a href="#contact" class="nav__link">Liên hệ</a>
                         </li>
                         <li class="nav__item">
-                            <a href="cart.html" class="nav__link">Giỏ Hàng: <span id='total'>0</span></a>
+                            <div class="cart-icon">
+                            
+                                    <p><div class="cart-button" style="font-weight: bold; color:black; cursor: pointer;">Giỏ hàng: </div><span>0</span></p>
+                                
+                                
+                            </div>
+                            
                         </li>
                     </ul>
                 </div>
@@ -155,7 +161,7 @@
             </section>
 
             <!--==================== PRODUCTS-Sản phẩm ====================-->
-            <section class="product section container" id="products">
+            <section class="product section container" >
                 <h2 class="section__title-center">
                      Các sản phẩm 
                 </h2>
@@ -167,13 +173,13 @@
 
                 <div class="product__container grid" id="products">
                     
-                    <article class="product__card" id="1">
+                    <article class="product__card" >
                         
 
                         <img src="assets/img/product1.png" alt="" class="product__img">
 
                         <h3 class="product__title">Cacti Plant</h3>
-                        <span class="product__price">100.000<sup>d</sup></span>
+                        <p><span class="product__price">100.000</span><sup style="font-weight: bold;">d</sup></p>
 
                         <button class="button--flex product__button">
                             <i class="ri-shopping-bag-line"></i>
@@ -186,7 +192,7 @@
                         <img src="assets/img/product2.png" alt="" class="product__img">
 
                         <h3 class="product__title">Cactus Plant</h3>
-                        <span class="product__price">130.000<sup>d</sup></span>
+                        <p><span class="product__price">130.000</span><sup style="font-weight: bold;">d</sup></p>
 
                         <button class="button--flex product__button">
                             <i class="ri-shopping-bag-line"></i>
@@ -199,7 +205,7 @@
                         <img src="assets/img/product3.png" alt="" class="product__img">
 
                         <h3 class="product__title">Aloe Vera Plant</h3>
-                        <span class="product__price">120.000<sup>d</sup></span>
+                        <p><span class="product__price">120.000</span><sup style="font-weight: bold;">d</sup></p>
 
                         <button class="button--flex product__button">
                             <i class="ri-shopping-bag-line"></i>
@@ -212,7 +218,7 @@
                         <img src="assets/img/product4.png" alt="" class="product__img">
 
                         <h3 class="product__title">Succulent Plant</h3>
-                        <span class="product__price">140.000<sup>d</sup></span>
+                        <p><span class="product__price">140.000</span><sup style="font-weight: bold;">d</sup></p>
 
                         <button class="button--flex product__button">
                             <i class="ri-shopping-bag-line"></i>
@@ -225,7 +231,7 @@
                         <img src="assets/img/product5.png" alt="" class="product__img">
 
                         <h3 class="product__title">Succulent Plant</h3>
-                        <span class="product__price">132.000<sup>d</sup></span>
+                        <p><span class="product__price">132.000</span><sup style="font-weight: bold;">d</sup></p>
 
                         <button class="button--flex product__button">
                             <i class="ri-shopping-bag-line"></i>
@@ -238,7 +244,7 @@
                         <img src="assets/img/product6.png" alt="" class="product__img">
 
                         <h3 class="product__title">Green Plant</h3>
-                        <span class="product__price">125.000<sup>d</sup></span>
+                        <p><span class="product__price">125.000</span><sup style="font-weight: bold;">d</sup></p>
 
                         <button class="button--flex product__button">
                             <i class="ri-shopping-bag-line"></i>
@@ -246,6 +252,8 @@
                     </article>
                 </div>
             </section>
+
+            
 
             <!--==================== QUESTIONS ====================-->
             <section class="questions section" id="faqs">
@@ -356,6 +364,54 @@
                 </div>
             </section>
 
+
+
+            <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width= , initial-scale=1.0">
+            <link rel="stylesheet" href="assets/css/cart.css">
+            <script src="https://kit.fontawesome.com/54f0cb7e4a.js" crossorigin="anonymous"></script>
+
+           
+            <title>Giỏ Hàng</title>
+        </head>
+        <body>
+            <section class="cart">
+                <h2>ooooo</h2>
+                
+                <i class="fas fa-times"></i>
+                <h2>Giỏ hàng</h2>
+                <form action="">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Sản Phẩm</th>
+                                <th>Giá</th>
+                                <th>Số Lượng</th>
+                                <th>Chọn</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!----<tr>
+                                <td style="display: flex;align-items: center;"><img style="width: 70px" src="/responsive-plants-website-main/assets/img/product1.png" alt="">product1</td>
+                                <td><p><span>100.000</span><sup>d</sup></p></td>
+                                <td><input style="width: 30px; outline: none;" type="number" value="1" min="1"></td>
+                                <td style="cursor: pointer;">Xoa</td>
+                            </tr>------>
+                        </tbody>
+                    </table>
+                    <div class="price-total" style="text-align: right;">
+                        <p style="font-weight: bold;">Tổng tiền: <span>0</span><sup>d</sup> </p>
+                    </div>
+                </form>
+        
+            </section>
+            <script src="/responsive-plants-website-main/assets/js/main.js"></script>
+        </body>
+        </html>  
+
             <!--==================== CONTACT ====================-->
             <section class="contact section container" id="contact">                
                 <div class="contact__container grid">
@@ -452,47 +508,10 @@
     
         </footer>
         <!--=============== MAIN JS ===============-->
-        <script src="assets/js/main.js"></script>
+        <script src="assets/js/main.js"></script> 
         
-        <!DOCTYPE html>
-        <html lang="en">
-        <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width= , initial-scale=1.0">
-            <link rel="stylesheet" href="assets/css/cart.css">
-           
-            <title>Giỏ Hàng</title>
-        </head>
-        <body>
-            <section class="cart">
-                <h2>Giỏ hàng</h2>
-                <form action="">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Sản Phẩm</th>
-                                <th>Giá</th>
-                                <th>Số Lượng</th>
-                                <th>Chọn</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <!----<tr>
-                                <td style="display: flex;align-items: center;"><img style="width: 70px" src="/responsive-plants-website-main/assets/img/product1.png" alt="">product1</td>
-                                <td><p><span>100.000</span><sup>d</sup></p></td>
-                                <td><input style="width: 30px; outline: none;" type="number" value="1" min="1"></td>
-                                <td style="cursor: pointer;">Xoa</td>
-                            </tr>------>
-                        </tbody>
-                    </table>
-                    <div class="price-total" style="text-align: right;">
-                        <p style="font-weight: bold;">Tổng tiền: <span>320.000</span><sup>d</sup> </p>
-                    </div>
-                </form>
+        <!--===============  ===============-->
         
-            </section>
-            <script src="/responsive-plants-website-main/assets/js/main.js"></script>
-        </body>
-        </html>  
     </body>
 </html>
+
